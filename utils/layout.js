@@ -14,3 +14,20 @@ export function mapProductToCard(product) {
         </div>
     `;
 }
+
+export function mapProductToAdminTableRow(product) {
+  return `
+        <tr>
+            <td>${product.name}</td>
+            <td>${product.price}</td>
+            <td><img width="50px" src=${product.imageURL} /></td>
+            <td>${product.details} </td>
+            <td>
+                <button class="edit-btn" data-productId=${product.id}>Edit</button>
+            </td>
+            <td>
+                <button class="delete-btn" data-productId=${product.id}>Delete</button>
+            </td>
+        </tr>
+    `;
+}
