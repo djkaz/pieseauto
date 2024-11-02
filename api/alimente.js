@@ -6,6 +6,13 @@ export async function getAllProducts() {
     return products;
 }
 
+export async function getProductById(id) {
+    const response = await fetch(`${URL}/${id}`);
+    const product = await response.json();
+
+    return product;
+}
+
 export async function addNewProduct(product){
     const response = await fetch(URL, {
         method: "POST",

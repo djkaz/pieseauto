@@ -1,5 +1,5 @@
 export function mapProductToCard(product) {
-  return `
+	return `
         <div class="card">
             <div class="info">
                 <div class="img">
@@ -10,13 +10,20 @@ export function mapProductToCard(product) {
                 </div>
                 <div class="price">${product.price} lei</div>
             </div>
-            <button class="add-to-cart">Adauga in cos</button>
+            <button class="add-to-cart" 
+               data-productId=${product.id}
+               data-name="${product.name}"
+               data-price=${product.price}
+               data-image=${product.imageURL}   
+            >
+               Adauga in cos
+            </button>
         </div>
     `;
 }
 
 export function mapProductToAdminTableRow(product) {
-  return `
+	return `
         <tr>
             <td>${product.name}</td>
             <td>${product.price}</td>
@@ -31,3 +38,39 @@ export function mapProductToAdminTableRow(product) {
         </tr>
     `;
 }
+
+
+//Old code 
+//export function mapProductToCard(product) {
+//   return `
+//         <div class="card">
+//             <div class="info">
+//                 <div class="img">
+//                     <img src=${product.imageURL} alt="">
+//                 </div>
+//                 <div class="name">
+//                     <h4>${product.name}</h4>
+//                 </div>
+//                 <div class="price">${product.price} lei</div>
+//             </div>
+//             <button class="add-to-cart">Adauga in cos</button>
+//         </div>
+//     `;
+// }
+
+// export function mapProductToAdminTableRow(product) {
+//   return `
+//         <tr>
+//             <td>${product.name}</td>
+//             <td>${product.price}</td>
+//             <td><img width="50px" src=${product.imageURL} /></td>
+//             <td>${product.details} </td>
+//             <td>
+//                 <button class="edit-btn" data-productId=${product.id}>Edit</button>
+//             </td>
+//             <td>
+//                 <button class="delete-btn" data-productId=${product.id}>Delete</button>
+//             </td>
+//         </tr>
+//     `;
+// }
